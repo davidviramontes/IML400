@@ -1,0 +1,78 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <title>Aesthetics of the Internet</title>
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <div id="container">
+	<header>
+		<h1>
+		  <strong><a href="index.html">David Viramontes</a></strong>  IML 400
+		</h1>
+	</header>
+	<nav id="mini-dropdown-1">
+    	<ul class="dropdown">
+    		<li>
+        		<a href="#">Readings</a>
+        		<ul>
+        			<li><a href="aesthetics.html">Aesthetics of the Internet</a></li>
+          			<li><a href="internetArt.html">The Internet as Art</a></li>
+          			<li><a href="worldWideWeb.html">The World Wide Web</a></li>
+        		</ul>
+       		</li>
+       		<li>
+        		<a href="#">Assignments</a>
+        		<ul>
+          			<li><a href="webHistory.html">History of the Web</a></li>
+          			<li><a href="apiExercise.html">API</a></li>
+          			<li><a href="whoDat.html">Who_Dat</a></li>
+        		</ul>
+       		</li>
+       		<li><a href="#">Proposal</a></li>
+     	</ul>
+   	</nav>
+  </div>
+  	<article id="content">
+  	  	<img src="images/globe.gif" alt="globe" style="width:392px;height:294px;">
+  		<h2>Aesthetics of the Internet</h2>
+  		<p>Similar to As We May Think, Ito’s article is profound in it’s predictions of what the internet will become. His words echo things we see on a regular basis across many online communities. From memes to social networks, he seems to have understood it before any of these concepts were an established part of internet culture.</p>
+  		<p>“People invest time and energy into these communities and these communities evolve into a complex aggregate of relationships between people mediated by a technology and a context.” This quote so clearly reflects the online communities that we have come to call social networks. And Ito’s understanding of early forums and message boards demonstrates that internet culture is not something new, but rather the internet became a new place on which to practice culture.</p>
+  		<p>Later on in the article, Ito explains a tension between order and chaos online and gives an argument for both. Order, he argues, exists in a closed system and can be easily broken by a single bug or virus. These systems may be productive, but they are limited in functionality and involve a lot of risk. Chaos, on the other hand, allows for all manner of ways to find a great solution, but is too uncontrollable to be implemented easily. Instead of either, Ito argues for both. The internet is best when it is an organized chaos.</p>
+		<p>Ito says that the chaotic aspect of the internet’s structure allows for high energy, while the organized aspect is vital to receive feedback. This combination is what is best to allow the internet to grow into the future.</p>
+  	</article>
+<script src="js/libs/jquery.min.js"></script>
+<script src="js/miniDropdown.js"></script>
+<script>
+$(function(){
+    // Basic example
+    $('#mini-dropdown-1 .dropdown').miniDropdown();
+
+    // Built in animation
+    $('#mini-dropdown-2 .dropdown').miniDropdown({
+      animation: 'slide', 
+      show: 100,
+      hide: 100,
+      delayIn: 100,
+      delayOut: 100
+    });
+
+    // Custom animations
+    $('#mini-dropdown-3 .dropdown').miniDropdown({
+      showFunction: function(item, subnav) {
+        subnav.css({right: 0, opacity: 0}).show();
+        subnav.animate({right: $(window).width() - item.offset().left - item.width() , opacity: 1}, 200)
+      },
+      hideFunction: function(item, subnav) {
+        subnav.animate({right:  $(window).width(), opacity: 0}, 300, function(){
+          $(this).hide();
+        })
+      }
+
+    });
+  });
+</script>
+</body>
+</html>

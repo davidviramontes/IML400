@@ -1,0 +1,77 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <title>The Internet as Art</title>
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <div id="container">
+	<header>
+		<h1>
+		  <strong><a href="index.html">David Viramontes</a></strong>  IML 400
+		</h1>
+	</header>
+	<nav id="mini-dropdown-1">
+    	<ul class="dropdown">
+    		<li>
+        		<a href="#">Readings</a>
+        		<ul>
+        			<li><a href="aesthetics.html">Aesthetics of the Internet</a></li>
+          			<li><a href="internetArt.html">The Internet as Art</a></li>
+          			<li><a href="worldWideWeb.html">The World Wide Web</a></li>
+        		</ul>
+       		</li>
+       		<li>
+        		<a href="#">Assignments</a>
+        		<ul>
+          			<li><a href="webHistory.html">History of the Web</a></li>
+          			<li><a href="apiExercise.html">API</a></li>
+          			<li><a href="whoDat.html">Who_Dat</a></li>
+        		</ul>
+       		</li>
+       		<li><a href="#">Proposal</a></li>
+     	</ul>
+   	</nav>
+  </div>
+  	<article id="content">
+  		<h2>The Internet as Art</h2>
+  		<p>“The so-called disruptive potential of net.art was identified in disempowering the middleman,” he says. “Our first generation aggressively played with shortcuts to the end user, thus avoiding curators, critics, theorists and all other art bureaucracy.”</p>
+  		<p>This quote strikes me as containing the essence of all outsider art medium. The idea that a piece of art represents a rebellion against the traditional structures of artistic representation is one that is shared across mediums. The fact that internet art is able to do just that is a testament to the internet’s existence as an artistic platform all the more. However, this notion that art slips past the filter to find it’s way to the end user is an interesting paradigm and one that I think is similar to street art.</p>
+  		<p>The similarity between the two is striking. Street art like internet art was created in such a way that it finds it’s audience by nature of it’s medium and bypasses the middleman. Traditionally, the culture of art is practiced in museums, but street art as with internet art is practice in the domain of the common man. This represents a paradigm shift that we are in the middle of. The fact that internet art challenges tradition means that it is forward looking.</p>
+  		<p>The ideas of art in the article are specifically Web 3.0 ideas in that they focus on the collaborative nature of internet art. No longer is the artist the sole creator of an artistic experience, the community that gathers around art can contribute just as much to the conversation and the actual piece of art as the originator. These communities then become what the art is, and the message they present are all the more impactful.</p>
+  	</article>
+<script src="js/libs/jquery.min.js"></script>
+<script src="js/miniDropdown.js"></script>
+<script>
+$(function(){
+    // Basic example
+    $('#mini-dropdown-1 .dropdown').miniDropdown();
+
+    // Built in animation
+    $('#mini-dropdown-2 .dropdown').miniDropdown({
+      animation: 'slide', 
+      show: 100,
+      hide: 100,
+      delayIn: 100,
+      delayOut: 100
+    });
+
+    // Custom animations
+    $('#mini-dropdown-3 .dropdown').miniDropdown({
+      showFunction: function(item, subnav) {
+        subnav.css({right: 0, opacity: 0}).show();
+        subnav.animate({right: $(window).width() - item.offset().left - item.width() , opacity: 1}, 200)
+      },
+      hideFunction: function(item, subnav) {
+        subnav.animate({right:  $(window).width(), opacity: 0}, 300, function(){
+          $(this).hide();
+        })
+      }
+
+    });
+  });
+</script>
+</body>
+</html>
